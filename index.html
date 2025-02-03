@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Құпия портал</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            border: 2px solid #333;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            background-color: white;
+            display: none;
+        }
+        .login-box {
+            margin: auto;
+            width: 300px;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>Құпия портал</h2>
+        <p>Өзіңізді таныстырыңыз:</p>
+        <input type="text" id="name" placeholder="Аты-жөніңіз"><br><br>
+        <input type="password" id="code" placeholder="Құпия код"><br><br>
+        <button onclick="unlockPortal()">Кіру</button>
+    </div>
+
+    <div class="container" id="portal">
+        <h2>Қош келдіңіз!</h2>
+        <p>Сіз веб-формалардың құпиясын ашуға дайынсыз!</p>
+    </div>
+
+    <script>
+        function unlockPortal() {
+            var name = document.getElementById("name").value;
+            var code = document.getElementById("code").value;
+            if (name !== "" && code === "1234") { 
+                document.getElementById("portal").style.display = "block";
+                document.querySelector(".login-box").style.display = "none";
+            } else {
+                alert("Қате! Қайта енгізіңіз.");
+            }
+        }
+    </script>
+
+</body>
+</html>
